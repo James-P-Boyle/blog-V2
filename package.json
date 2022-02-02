@@ -12,6 +12,9 @@
   },
   "author": "James",
   "license": "ISC",
+  "engines": {
+    "node": "16.13.1"
+  },
   "bugs": {
     "url": "https://github.com/James-P-Boyle/WBS-BLOG-FINAL/issues"
   },
