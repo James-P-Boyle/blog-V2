@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+/* color pallet
+hsl(325, 45%, 23%)
+hsl(286, 23%, 37%)
+hsl(294, 11%, 50%)
+hsl(149, 26%, 62%) */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+
+.navbar {
+  padding: 5px 10px;
+  border-bottom: 1px solid black;
+  border-radius: 0;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  background-color: hsl(325, 45%, 23%);
+}
+
+.navbar-nav li a:hover {
+  color: hsl(149, 26%, 62%) !important;
+}
+
+.navbar-brand:hover {
+  color: hsl(149, 26%, 62%) !important;
+}
+
+.wrapper {
+  height: 100vh;
+  /* to scroll inside of the wrapper */
+  overflow-y: auto;
+  /*  remove horizontal scroll bars */
+  overflow-x: hidden;
+  /* perspective allows 3d effect/ how far away it is from the screen */
+  /*   all other values need to relative to this */
+  perspective: 10px;
+}
+
+header {
+  /* stack on top of each other */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  /* to allow the 3d dimensions to work properly */
+  transform-style: preserve-3d;
+  /* so pics show behind text */
+  z-index: -1;
+}
+
+.background {
+  /* to make it closer or further from screen */
+  /* negative value makes it further away */
+  /* background is twice as far away from us as the screen is */
+  /* specify scale to make it appear the same size */
+  transform: translateZ(-10px) scale(2);
+}
+
+.foreground {
+  transform: translateZ(-5px) scale(1.5);
+}
+
+.background,
+.foreground {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.title {
+  position: absolute;
+  top: 30px;
+  font-size: 4rem;
+  text-shadow: 0 0 7px black;
+  padding: 5px;
+  text-align: center;
+  width: 90%;
+}
+
+.home-text {
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 75px;
+  padding: 20px 15px;
+  max-width: 90%;
+  background-color: hsla(325, 45%, 23%, 0.5);
+}
+
+.home-text p {
+  margin-top: 20px;
+}
+
+.main-section {
+  background-color: hsl(286, 23%, 37%);
+  padding-top: 70px;
+  border-top: 2px solid black;
+  overflow-y: auto;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  background-color: hsl(149, 26%, 62%);
+  max-width: 90%;
+}
+
+.container h1 {
+  padding-top: 20px;
+  font-size: 2rem;
+}
+
+.container p {
+  padding-bottom: 25px;
+  margin-top: 20px;
+  font-size: 1rem;
+}
+
+p a {
+  color: hsl(286, 23%, 37%);
+}
+
+p a:hover {
+  color: hsl(325, 45%, 23%);
+}
+
+/* Thank you Page */
+
+.center-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 20px 0px 80px;
+}
+
+.center-flex h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.center-flex p {
+  font-size: 1.5rem;
+}
+
+.homeButton {
+  background: hsl(325, 45%, 23%);
+  border-radius: 28px;
+  color: White;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 12px 76px;
+  text-decoration: none;
+  margin-bottom: 50px;
+}
+
+.homeButton:hover {
+  background: hsla(325, 45%, 23%, 0.6);
+  text-decoration: none;
+  color: White;
+  font-weight: bolder;
+}
+.homeButton:active {
+  position: relative;
+  top: 1px;
+}
+
+/* contact */
+.contact-form {
+  padding-bottom: 50px;
+}
+
+/* compose */
+.compose-form {
+  padding-bottom: 30px;
+}
+
+/* footer */
+footer {
+  text-align: center;
+
+  height: 60px;
+  background-color: hsl(325, 45%, 23%);
+
+  border-top: 1px solid black;
+}
+
+footer p {
+  margin-top: 20px;
+  font-size: 12px;
+}
