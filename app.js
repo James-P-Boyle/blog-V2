@@ -3,6 +3,8 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
 const _ = require("lodash");
+require("dotenv").config();
+const cors = require("cors");
 
 const homeStartingContent =
   "About lorem Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia, inventore Aliquid itaque recusandae doloribus rem sed veniam quam";
@@ -27,10 +29,7 @@ app.use(express.static("public"));
   }); */
 
 mongoose
-  .connect(
-    "mongodb+srv://james-admin:James5145-!@blog-wbs.k3rhb.mongodb.net/wbsDB",
-    { useNewUrlParser: true }
-  )
+  .connect(process.env.MONGO_URI, { useNewUrlParser: true })
   .then(() => {
     console.log("Successfully connected to MongoDB");
   })
@@ -38,6 +37,8 @@ mongoose
     console.log("Connection error", err);
     process.exit;
   });
+
+app.use(cors());
 
 const postSchema = {
   title: String,
